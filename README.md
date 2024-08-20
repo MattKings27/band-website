@@ -3,7 +3,7 @@
 
 This project is a fan-made website consuming Spotify API in homenage of the band Led Zeppelin 
 
-## Basic Setup
+## Info
 
 **Clonning the Repository**
 
