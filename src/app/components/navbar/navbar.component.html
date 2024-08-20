@@ -1,0 +1,39 @@
+<nav class="sticky top-0 left-0 w-full z-50 px-12 py-8">
+    <div class="container mx-auto flex justify-end lg:justify-center items-center">
+        <div class="absolute left-12">
+        </div>
+
+        <div class="lg:hidden flex">
+            <button class="relative group focus:outline-none" (click)="toggleMenu()">
+                <div class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden">
+                    <div class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left" [ngClass]="{'translate-x-10': isMenuOpen}"></div>
+                    <div class="bg-white h-[2px] w-7 rounded transform transition-all duration-300 delay-75" [ngClass]="{'translate-x-10': isMenuOpen}"></div>
+                    <div class="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left delay-150"[ngClass]="{'translate-x-10': isMenuOpen}"></div>
+
+                    <div class="absolute inset-0 flex items-center justify-center transform transition-all duration-500" [ngClass]="{'opacity-100': isMenuOpen, 'opacity-0': !isMenuOpen}">
+                        <div class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 rotate-45"></div>
+                        <div class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-45"></div>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="space-x-6 font-[300] text-lg lg:gap-8 lg:flex hidden">
+            <a routerLink="/" routerLinkActive="border-b-2 border-green-400" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-green-400">Home</a>
+            <a routerLink="/about" routerLinkActive="border-b-2 border-green-400" class="hover:text-green-400">About</a> 
+            <a routerLink="/albums" routerLinkActive="border-b-2 border-green-400" class="hover:text-green-400">Albums</a>
+            <a href="https://open.spotify.com/intl-pt/artist/36QJpDe2go2KgaRleHCDTp" target="_blank" class="hover:text-green-400">Listen Now</a> 
+        </div>
+
+     
+    </div>
+
+    <div [ngClass]="{'hidden': !isMenuOpen, 'block': isMenuOpen}" class="transform transition-transform duration-300 lg:hidden">
+        <div class="flex flex-col gap-4 font-[300] text-lg mt-8">
+            <a routerLink="/" routerLinkActive="text-green-400" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-green-400">Home</a>
+            <a routerLink="/about" routerLinkActive="text-green-400" class="hover:text-green-400">About</a> 
+            <a routerLink="/albums" routerLinkActive="text-green-400" class="hover:text-green-400">Albums</a>
+            <a href="https://open.spotify.com/intl-pt/artist/36QJpDe2go2KgaRleHCDTp" target="_blank" class="hover:text-green-400">Listen Now</a> 
+        </div>
+    </div>
+</nav>
